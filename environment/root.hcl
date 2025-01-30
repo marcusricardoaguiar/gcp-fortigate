@@ -13,18 +13,17 @@ remote_state {
 }
 
 locals {
-  project_id         = "terraform-opa"
+  project_id         = "host-fortigate"
   region             = "us-central1"
-  service_project_id = "terraform-opa"
-  hub_project_id     = "terraform-opa"
-  spoke_project_id   = "terraform-opa"
+  service_project_id = "service-fortigate"
+  hub_project_id     = "host-fortigate"
+  spoke_project_id   = "service-fortigate"
 
-  fortigate_hostname     = "35.222.123.111"
-  fortigate_api_key      = "asdfasdgsdfghsdfgsadfasdf"
+  fortigate_hostname = "placeholder"
+  fortigate_api_key  = "placeholder"
 }
 
 inputs = {
-  project         = local.service_project_id
   region          = local.region
   service_project = local.service_project_id
   hub_project     = local.hub_project_id
@@ -37,13 +36,13 @@ generate "provider" {
   if_exists = "overwrite_terragrunt"
   contents = <<EOF
 provider "google" {
-  credentials = file("${find_in_parent_folders("terraform-opa-4e64c656583b.json")}")
-  project     = "${local.project_id}"
+  credentials = file("${find_in_parent_folders("fine-physics-449114-t4-0c86290f3844.json")}")
+  project     = "${local.service_project}"
   region      = "${local.region}"
 }
 provider "google-beta" {
-  credentials = file("${find_in_parent_folders("terraform-opa-4e64c656583b.json")}")
-  project     = "${local.project_id}"
+  credentials = file("${find_in_parent_folders("fine-physics-449114-t4-0c86290f3844.json")}")
+  project     = "${local.service_project}"
   region      = "${local.region}"
 }
 EOF

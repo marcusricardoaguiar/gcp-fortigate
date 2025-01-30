@@ -12,7 +12,7 @@ variable "prefix" {
 variable "region" {
   type = string
   description = "Region to deploy to"
-  default = "europe-west1"
+  default = "us-west1"
 }
 
 variable "networks" {
