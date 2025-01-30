@@ -9,8 +9,5 @@ terraform {
       source  = "hashicorp/google-beta"
       version = ">= 6.13.0, < 7.0.0"
     }
-    fortios = {
-      source = "fortinetdev/fortios"
-    }
   }
 }

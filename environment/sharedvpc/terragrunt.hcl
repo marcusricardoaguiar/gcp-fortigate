@@ -20,7 +20,7 @@ inputs = {
   host_project    = "${include.root.inputs.spoke_project}"
   service_project = "${include.root.inputs.service_project}"
   shared_subnets  = {
-    "vm1" = "10.10.0.0/28",
-    "vm2" = "10.10.0.16/28"
+    "app1" = "10.10.0.0/28",
+    "app2" = "10.10.0.16/28"
   }
 }
